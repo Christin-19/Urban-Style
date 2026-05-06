@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Producto — Urban Style Online</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body data-page="product">
+
+  <div class="announce-bar">🔥 ENVÍO GRATIS en compras mayores a $120.000 COP</div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Urban<span>Style</span></a>
+      <div class="header-search">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="headerSearch" placeholder="Buscar...">
+        <div class="search-results-dropdown" id="searchDropdown"></div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="catalog.html" class="nav-link">Catálogo</a>
+        <a href="cart.html" class="nav-link cart-link">🛒 <span id="miniCartCount" class="mini-count">0</span></a>
+      </nav>
+      <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="mobile-nav">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="catalog.html" class="nav-link">Catálogo</a>
+      <a href="cart.html" class="nav-link">🛒 Carrito <span id="miniCartCount" class="mini-count">0</span></a>
+    </nav>
+  </header>
+
+  <main class="container site-main">
+    <a href="catalog.html" class="back-link">← Volver al catálogo</a>
+    <div id="productDetail" class="product-detail"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> Urban Style Online</p>
+      <p>Bogotá, Colombia 🇨🇴</p>
+    </div>
+  </footer>
+</body>
+</html>

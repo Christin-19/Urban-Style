@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Checkout — Urban Style Online</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body data-page="checkout">
+
+  <div class="announce-bar">🔒 Pago 100% seguro · Tus datos están protegidos</div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Urban<span>Style</span></a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="catalog.html" class="nav-link">Catálogo</a>
+        <a href="cart.html" class="nav-link cart-link">🛒 <span id="miniCartCount" class="mini-count">0</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container site-main">
+    <a href="cart.html" class="back-link">← Volver al carrito</a>
+    <div style="margin-bottom:24px">
+      <div class="section-eyebrow">Paso final</div>
+      <h1 class="section-title">Finalizar <span>compra</span></h1>
+    </div>
+
+    <div class="checkout-grid">
+      <!-- Form -->
+      <form id="checkoutForm" class="checkout-form-wrap" novalidate>
+        <div class="form-section-title">📍 Información de envío</div>
+
+        <div class="field">
+          <label class="field-label">Nombre completo</label>
+          <input name="fullname" type="text" placeholder="Tu nombre completo" required>
+          <div id="err-name" class="error"></div>
+        </div>
+
+        <div class="field">
+          <label class="field-label">Dirección de entrega</label>
+          <input name="address" type="text" placeholder="Calle, número, barrio, ciudad" required>
+          <div id="err-address" class="error"></div>
+        </div>
+
+        <div class="fields-row">
+          <div class="field">
+            <label class="field-label">Teléfono</label>
+            <input name="phone" type="tel" placeholder="+57 300 000 0000" required>
+            <div id="err-phone" class="error"></div>
+          </div>
+          <div class="field">
+            <label class="field-label">Correo electrónico</label>
+            <input name="email" type="email" placeholder="tu@correo.com" required>
+            <div id="err-email" class="error"></div>
+          </div>
+        </div>
+
+        <div class="form-section-title">💳 Método de pago</div>
+        <div class="payment-methods">
+          <button type="button" class="payment-method" data-payment="tarjeta">
+            <span class="pm-icon">💳</span>Tarjeta
+          </button>
+          <button type="button" class="payment-method" data-payment="pse">
+            <span class="pm-icon">🏦</span>PSE
+          </button>
+          <button type="button" class="payment-method" data-payment="paypal">
+            <span class="pm-icon">🅿️</span>PayPal
+          </button>
+          <button type="button" class="payment-method" data-payment="nequi">
+            <span class="pm-icon">📱</span>Nequi
+          </button>
+        </div>
+        <div id="err-payment" class="error" style="margin-top:8px"></div>
+
+        <div style="display:flex;gap:12px;margin-top:28px;justify-content:flex-end">
+          <a href="cart.html" class="btn ghost">← Volver</a>
+          <button type="submit" class="btn primary" style="font-size:18px;padding:14px 32px">
+            Confirmar pedido 🚀
+          </button>
+        </div>
+      </form>
+
+      <!-- Order Summary -->
+      <aside class="order-summary">
+        <h3>Resumen</h3>
+        <div id="orderItems"></div>
+        <div class="cart-total">
+          <span>Total</span>
+          <span id="orderTotal">$0 COP</span>
+        </div>
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px;margin-top:8px">
+          <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:2px;margin-bottom:8px">SEGURIDAD</div>
+          <div style="font-size:14px;color:var(--muted);line-height:1.6">🔒 Tus datos están protegidos<br>🚀 Envío en 2-5 días hábiles<br>↩️ Devoluciones en 30 días</div>
+        </div>
+      </aside>
+    </div>
+
+    <div id="orderResult"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> Urban Style Online</p>
+      <p>Bogotá, Colombia 🇨🇴</p>
+    </div>
+  </footer>
+</body>
+</html>
