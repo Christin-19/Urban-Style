@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Catálogo — Urban Style Online</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body data-page="catalog">
+
+  <div class="announce-bar">🔥 ENVÍO GRATIS en compras mayores a $120.000 COP · NUEVAS COLECCIONES CADA SEMANA</div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Urban<span>Style</span></a>
+      <div class="header-search">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="headerSearch" placeholder="Buscar...">
+        <div class="search-results-dropdown" id="searchDropdown"></div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="catalog.html" class="nav-link active">Catálogo</a>
+        <a href="cart.html" class="nav-link cart-link">🛒 <span id="miniCartCount" class="mini-count">0</span></a>
+      </nav>
+      <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="mobile-nav">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="catalog.html" class="nav-link">Catálogo</a>
+      <a href="cart.html" class="nav-link">🛒 Carrito <span id="miniCartCount" class="mini-count">0</span></a>
+    </nav>
+  </header>
+
+  <main class="container site-main">
+    <div style="margin-bottom:24px">
+      <div class="section-eyebrow">Explorar</div>
+      <h1 class="section-title">Catálogo <span>completo</span></h1>
+    </div>
+
+    <div class="catalog-layout">
+      <!-- Filters -->
+      <aside class="filters-panel">
+        <h3>Filtros</h3>
+
+        <div class="filter-group">
+          <label>Categoría</label>
+          <select id="filterCategory">
+            <option value="all">Todas</option>
+            <option value="camisetas">Camisetas</option>
+            <option value="sudaderas">Sudaderas</option>
+            <option value="chaquetas">Chaquetas</option>
+            <option value="pantalones">Pantalones</option>
+            <option value="accesorios">Accesorios</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>Género</label>
+          <select id="filterGender">
+            <option value="all">Todos</option>
+            <option value="unisex">Unisex</option>
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>Talla</label>
+          <select id="filterSize">
+            <option value="all">Todas</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>Precio máximo</label>
+          <div class="price-display">$<span id="priceVal">200,000</span> COP</div>
+          <input id="filterPrice" type="range" min="0" max="200000" step="5000" value="200000">
+        </div>
+
+        <button id="clearFilters" class="btn ghost" style="width:100%;justify-content:center;margin-top:8px">
+          Limpiar filtros
+        </button>
+      </aside>
+
+      <!-- Products -->
+      <section>
+        <div class="catalog-top">
+          <span class="catalog-count" id="catalogCount">12 productos</span>
+          <select class="sort-select" id="sortSelect">
+            <option value="featured">Destacados</option>
+            <option value="price-asc">Precio: menor a mayor</option>
+            <option value="price-desc">Precio: mayor a menor</option>
+          </select>
+        </div>
+        <div id="productGrid" class="cards-grid"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> Urban Style Online</p>
+      <p>Bogotá, Colombia 🇨🇴</p>
+    </div>
+  </footer>
+</body>
+</html>

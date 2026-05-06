@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Carrito — Urban Style Online</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body data-page="cart">
+
+  <div class="announce-bar">🚀 ENVÍO GRATIS comprando más de $120.000 COP</div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Urban<span>Style</span></a>
+      <div class="header-search">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="headerSearch" placeholder="Buscar...">
+        <div class="search-results-dropdown" id="searchDropdown"></div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="catalog.html" class="nav-link">Catálogo</a>
+        <a href="cart.html" class="nav-link active cart-link">🛒 <span id="miniCartCount" class="mini-count">0</span></a>
+      </nav>
+      <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="mobile-nav">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="catalog.html" class="nav-link">Catálogo</a>
+      <a href="cart.html" class="nav-link">🛒 Carrito</a>
+    </nav>
+  </header>
+
+  <main class="container site-main">
+    <div style="margin-bottom:28px">
+      <div class="section-eyebrow">Mi pedido</div>
+      <h1 class="section-title">Tu <span>carrito</span></h1>
+    </div>
+
+    <div class="cart-wrap">
+      <div>
+        <div id="cartItems" class="cart-items"></div>
+        <div id="cartEmpty" class="empty-state" style="display:none">
+          <span class="empty-icon">🛒</span>
+          <h3>Carrito vacío</h3>
+          <p>Aún no has agregado ningún producto</p>
+          <a href="catalog.html" class="btn primary">Ver catálogo</a>
+        </div>
+      </div>
+      <div id="cartSidebar" class="cart-sidebar" style="display:none"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> Urban Style Online</p>
+      <p>Bogotá, Colombia 🇨🇴</p>
+    </div>
+  </footer>
+</body>
+</html>
